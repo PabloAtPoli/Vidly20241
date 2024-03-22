@@ -11,7 +11,7 @@ class Movie(models.Model):
     release_year = models.IntegerField()
     number_in_stock = models.IntegerField()
     daily_rate = models.FloatField()
-    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
+    genre = models.ForeignKey(Genre, on_delete=models.SET_NULL, null=True)
     date_created = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
