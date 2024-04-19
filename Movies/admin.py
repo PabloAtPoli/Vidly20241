@@ -4,6 +4,7 @@ from django.urls import reverse
 from django.utils.html import format_html
 from .models import Genre, Movie
 
+
 class CountMoviesFilter(admin.SimpleListFilter):
     title = 'Count Movies'
     parameter_name = 'count_movies'
