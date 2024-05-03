@@ -16,4 +16,5 @@ class Movie(models.Model):
     date_created = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
-        return self.title
+        return self.title + " " + str(self.release_year) + " " + str(self.number_in_stock) + " " + str(self.daily_rate) + " " + str(self.genre) + " " + str(self.date_created)
+

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,6 +31,9 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'  # this is important for the admin_interface package
+
+
 INSTALLED_APPS = [
     'admin_interface',
     'colorfield',
@@ -41,6 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'movies.apps.MoviesConfig',
 ]
+
+# admin_interface specific settings
+ADMIN_INTERFACE_THEME = 'Vidly20241'  # or any other theme
+ADMIN_INTERFACE_FAVICON = 'admin-interface/favicon/movie.png'  # path to your favicon
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,7 +67,7 @@ ROOT_URLCONF = 'Vidly20241.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'admin-interface/favicon')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,6 +78,11 @@ TEMPLATES = [
             ],
         },
     },
+]
+
+# Add the folder for the favicon
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'admin-interface/favicon'),
 ]
 
 WSGI_APPLICATION = 'Vidly20241.wsgi.application'
@@ -120,6 +133,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+
 
 STATIC_URL = 'static/'
 
