@@ -15,7 +15,7 @@ def index(request):
 
     # output = ', '.join([m.title for m in movies])
     # return HttpResponse(output)
-    return render(request, 'movies/index2.html', {'movies': movies})
+    return render(request, 'movies/index.html', {'movies': movies})
     
 
    
