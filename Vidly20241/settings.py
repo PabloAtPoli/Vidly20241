@@ -36,6 +36,7 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'  # this is important for the admin_interface pack
 
 INSTALLED_APPS = [
     'admin_interface',
+    'movies'
     'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
