@@ -8,6 +8,8 @@ django = "*"
 django-admin-interface = "*"
 pylint-django = "*"
 django-tastypie = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 
