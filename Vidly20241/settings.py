@@ -36,7 +36,6 @@ X_FRAME_OPTIONS = 'SAMEORIGIN'  # this is important for the admin_interface pack
 
 INSTALLED_APPS = [
     'admin_interface',
-    'movies'
     'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,8 +53,8 @@ ADMIN_INTERFACE_FAVICON = 'admin-interface/favicon/movie.png'  # path to your fa
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
